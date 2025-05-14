@@ -3,8 +3,22 @@ import pandas as pd
 import json
 from unidecode import unidecode
 import os
+from flask_talisman import Talisman
 
 app = Flask(__name__)
+
+# Configurar Talisman para forçar HTTPS
+Talisman(app, 
+    force_https=True,
+    strict_transport_security=True,
+    session_cookie_secure=True,
+    content_security_policy={
+        'default-src': "'self'",
+        'img-src': "'self' data: https:",
+        'script-src': "'self' 'unsafe-inline' 'unsafe-eval'",
+        'style-src': "'self' 'unsafe-inline'",
+    }
+)
 
 # Carregar dados na memória
 def load_data():

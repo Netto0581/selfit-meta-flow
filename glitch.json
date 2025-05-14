@@ -5,6 +5,10 @@
     "PYTHON_VERSION": {
       "description": "Python version",
       "value": "3.9.0"
+    },
+    "FORCE_HTTPS": {
+      "description": "Force HTTPS",
+      "value": "true"
     }
   },
   "build": {
