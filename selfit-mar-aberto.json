@@ -1,0 +1,404 @@
+{
+  "version": "7.0",
+  "screens": [
+    {
+      "id": "banner",
+      "title": "Banner",
+      "layout": {
+        "type": "SingleColumnLayout",
+        "children": [
+          {
+            "type": "RichText",
+            "text": [
+              "**Plano Plus - R$ 119,90/mês**",
+              "Sem anuidade, sem fidelidade e sem taxa de adesão"
+            ]
+          },
+          {
+            "type": "Footer",
+            "label": "Eu quero!",
+            "on-click-action": {
+              "name": "navigate",
+              "next": {
+                "type": "screen",
+                "name": "api_estados"
+              },
+              "payload": {}
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "api_estados",
+      "title": "Estados Disponíveis",
+      "layout": {
+        "type": "SingleColumnLayout",
+        "children": [
+          {
+            "type": "TextBody",
+            "text": "Selecione o estado onde deseja encontrar uma unidade Selfit:"
+          },
+          {
+            "type": "RadioButtonsGroup",
+            "name": "estado",
+            "label": "Estado",
+            "required": true,
+            "data-source": "${data.estados}"
+          },
+          {
+            "type": "Footer",
+            "label": "Continuar",
+            "on-click-action": {
+              "name": "navigate",
+              "next": {
+                "type": "screen",
+                "name": "api_cidades"
+              },
+              "payload": {
+                "estado": "${estado}"
+              }
+            }
+          }
+        ]
+      },
+      "data": {
+        "estados": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "title": {
+                "type": "string"
+              }
+            }
+          },
+          "__example__": [
+            {
+              "id": "Sao_Paulo",
+              "title": "São Paulo"
+            },
+            {
+              "id": "Rio_De_Janeiro",
+              "title": "Rio De Janeiro"
+            }
+          ]
+        },
+        "baseUrl": {
+          "type": "string",
+          "__example__": "https://9302-2804-14d-5c74-9b20-f4b0-44e0-4ee2-5a90.ngrok.io"
+        },
+        "__example__": {
+          "type": "object",
+          "__example__": {
+            "estados": [
+              {
+                "id": "Sao_Paulo",
+                "title": "São Paulo"
+              },
+              {
+                "id": "Rio_De_Janeiro",
+                "title": "Rio De Janeiro"
+              }
+            ],
+            "baseUrl": "https://9302-2804-14d-5c74-9b20-f4b0-44e0-4ee2-5a90.ngrok.io"
+          }
+        }
+      }
+    },
+    {
+      "id": "api_cidades",
+      "title": "Cidades Disponíveis",
+      "layout": {
+        "type": "SingleColumnLayout",
+        "children": [
+          {
+            "type": "TextBody",
+            "text": "Selecione a cidade onde deseja encontrar uma unidade Selfit:"
+          },
+          {
+            "type": "RadioButtonsGroup",
+            "name": "cidade",
+            "label": "Cidade",
+            "required": true,
+            "data-source": "${data.cidades}"
+          },
+          {
+            "type": "Footer",
+            "label": "Continuar",
+            "on-click-action": {
+              "name": "navigate",
+              "next": {
+                "type": "screen",
+                "name": "api_unidades"
+              },
+              "payload": {
+                "estado": "${estado}",
+                "cidade": "${cidade}"
+              }
+            }
+          }
+        ]
+      },
+      "data": {
+        "cidades": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "title": {
+                "type": "string"
+              }
+            }
+          },
+          "__example__": [
+            {
+              "id": "Sao_Paulo",
+              "title": "São Paulo"
+            },
+            {
+              "id": "Campinas",
+              "title": "Campinas"
+            }
+          ]
+        },
+        "estado": {
+          "type": "string",
+          "__example__": "Sao_Paulo"
+        },
+        "baseUrl": {
+          "type": "string",
+          "__example__": "https://9302-2804-14d-5c74-9b20-f4b0-44e0-4ee2-5a90.ngrok.io"
+        },
+        "__example__": {
+          "type": "object",
+          "__example__": {
+            "cidades": [
+              {
+                "id": "Sao_Paulo",
+                "title": "São Paulo"
+              },
+              {
+                "id": "Campinas",
+                "title": "Campinas"
+              }
+            ],
+            "estado": "Sao_Paulo",
+            "baseUrl": "https://9302-2804-14d-5c74-9b20-f4b0-44e0-4ee2-5a90.ngrok.io"
+          }
+        }
+      }
+    },
+    {
+      "id": "api_unidades",
+      "title": "Unidades Disponíveis",
+      "layout": {
+        "type": "SingleColumnLayout",
+        "children": [
+          {
+            "type": "TextBody",
+            "text": "Selecione a unidade Selfit desejada:"
+          },
+          {
+            "type": "RadioButtonsGroup",
+            "name": "unidade",
+            "label": "Unidade",
+            "required": true,
+            "data-source": "${data.unidades}"
+          },
+          {
+            "type": "Footer",
+            "label": "Ver Link",
+            "on-click-action": {
+              "name": "navigate",
+              "next": {
+                "type": "screen",
+                "name": "api_link"
+              },
+              "payload": {
+                "unidade": "${unidade}"
+              }
+            }
+          }
+        ]
+      },
+      "data": {
+        "unidades": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "title": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              }
+            }
+          },
+          "__example__": [
+            {
+              "id": "Arapanes",
+              "title": "Arapanés",
+              "description": "Alameda dos Arapanés, 685"
+            },
+            {
+              "id": "Jardins",
+              "title": "Jardins",
+              "description": "Av. Marieta Leite, 03"
+            }
+          ]
+        },
+        "estado": {
+          "type": "string",
+          "__example__": "Sao_Paulo"
+        },
+        "cidade": {
+          "type": "string",
+          "__example__": "Sao_Paulo"
+        },
+        "baseUrl": {
+          "type": "string",
+          "__example__": "https://9302-2804-14d-5c74-9b20-f4b0-44e0-4ee2-5a90.ngrok.io"
+        },
+        "__example__": {
+          "type": "object",
+          "__example__": {
+            "unidades": [
+              {
+                "id": "Arapanes",
+                "title": "Arapanés",
+                "description": "Alameda dos Arapanés, 685"
+              },
+              {
+                "id": "Jardins",
+                "title": "Jardins",
+                "description": "Av. Marieta Leite, 03"
+              }
+            ],
+            "estado": "Sao_Paulo",
+            "cidade": "Sao_Paulo",
+            "baseUrl": "https://9302-2804-14d-5c74-9b20-f4b0-44e0-4ee2-5a90.ngrok.io"
+          }
+        }
+      }
+    },
+    {
+      "id": "api_link",
+      "title": "Link da Unidade",
+      "layout": {
+        "type": "SingleColumnLayout",
+        "children": [
+          {
+            "type": "TextBody",
+            "text": "Clique no link abaixo para acessar a unidade selecionada:"
+          },
+          {
+            "type": "TextBody",
+            "text": "${data.description}"
+          },
+          {
+            "type": "EmbeddedLink",
+            "text": "Acessar Unidade",
+            "on-click-action": {
+              "name": "navigate",
+              "next": {
+                "type": "screen",
+                "name": "FINISH"
+              },
+              "payload": {
+                "link": "${data.link}"
+              }
+            }
+          },
+          {
+            "type": "Footer",
+            "label": "Voltar",
+            "on-click-action": {
+              "name": "navigate",
+              "next": {
+                "type": "screen",
+                "name": "api_unidades"
+              },
+              "payload": {
+                "estado": "${estado}",
+                "cidade": "${cidade}"
+              }
+            }
+          }
+        ]
+      },
+      "data": {
+        "description": {
+          "type": "string",
+          "__example__": "Alameda dos Arapanés, 685"
+        },
+        "link": {
+          "type": "string",
+          "__example__": "https://www.selfit.com.br/unidade/arapanes"
+        },
+        "estado": {
+          "type": "string",
+          "__example__": "Sao_Paulo"
+        },
+        "cidade": {
+          "type": "string",
+          "__example__": "Sao_Paulo"
+        },
+        "unidade": {
+          "type": "string",
+          "__example__": "Arapanes"
+        },
+        "__example__": {
+          "type": "object",
+          "__example__": {
+            "description": "Alameda dos Arapanés, 685",
+            "link": "https://www.selfit.com.br/unidade/arapanes",
+            "estado": "Sao_Paulo",
+            "cidade": "Sao_Paulo",
+            "unidade": "Arapanes"
+          }
+        }
+      }
+    },
+    {
+      "id": "FINISH",
+      "data": {
+        "link": {
+          "type": "string",
+          "__example__": "https://www.selfit.com.br/unidade/arapanes"
+        },
+        "__example__": {
+          "type": "object",
+          "__example__": {
+            "link": "https://www.selfit.com.br/unidade/arapanes"
+          }
+        }
+      },
+      "title": "Final screen",
+      "terminal": true,
+      "layout": {
+        "type": "SingleColumnLayout",
+        "children": [
+          {
+            "type": "Footer",
+            "label": "Finalizar",
+            "on-click-action": {
+              "name": "complete",
+              "payload": {}
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

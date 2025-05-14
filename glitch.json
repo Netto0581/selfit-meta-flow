@@ -1,0 +1,16 @@
+{
+  "name": "selfit-meta-flow",
+  "description": "API para o fluxo da Selfit no Meta Flow",
+  "env": {
+    "PYTHON_VERSION": {
+      "description": "Python version",
+      "value": "3.9.0"
+    }
+  },
+  "build": {
+    "builder": "NIXPACKS"
+  },
+  "scripts": {
+    "start": "python app.py"
+  }
+} 
