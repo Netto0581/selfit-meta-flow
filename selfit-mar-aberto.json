@@ -44,7 +44,7 @@
             "name": "estado",
             "label": "Estado",
             "required": true,
-            "data-source": "${data.estados}"
+            "data-source": "https://meta-selfit-flow.glitch.me/estados"
           },
           {
             "type": "Footer",
@@ -124,7 +124,7 @@
             "name": "cidade",
             "label": "Cidade",
             "required": true,
-            "data-source": "${data.cidades}"
+            "data-source": "https://meta-selfit-flow.glitch.me/cidades?estado=${estado}"
           },
           {
             "type": "Footer",
@@ -210,7 +210,7 @@
             "name": "unidade",
             "label": "Unidade",
             "required": true,
-            "data-source": "${data.unidades}"
+            "data-source": "https://meta-selfit-flow.glitch.me/unidades?estado=${estado}&cidade=${cidade}"
           },
           {
             "type": "Footer",
