@@ -44,7 +44,7 @@
             "name": "estado",
             "label": "Estado",
             "required": true,
-            "data-source": "https://meta-selfit-flow.glitch.me/estados"
+            "data-source": "${data.estados}"
           },
           {
             "type": "Footer",
@@ -89,7 +89,7 @@
         },
         "baseUrl": {
           "type": "string",
-          "__example__": "https://9302-2804-14d-5c74-9b20-f4b0-44e0-4ee2-5a90.ngrok.io"
+          "__example__": "https://meta-selfit-flow.glitch.me"
         },
         "__example__": {
           "type": "object",
@@ -104,7 +104,7 @@
                 "title": "Rio De Janeiro"
               }
             ],
-            "baseUrl": "https://9302-2804-14d-5c74-9b20-f4b0-44e0-4ee2-5a90.ngrok.io"
+            "baseUrl": "https://meta-selfit-flow.glitch.me"
           }
         }
       }
@@ -124,7 +124,7 @@
             "name": "cidade",
             "label": "Cidade",
             "required": true,
-            "data-source": "https://meta-selfit-flow.glitch.me/cidades?estado=${estado}"
+            "data-source": "${data.cidades}"
           },
           {
             "type": "Footer",
@@ -174,7 +174,7 @@
         },
         "baseUrl": {
           "type": "string",
-          "__example__": "https://9302-2804-14d-5c74-9b20-f4b0-44e0-4ee2-5a90.ngrok.io"
+          "__example__": "https://meta-selfit-flow.glitch.me"
         },
         "__example__": {
           "type": "object",
@@ -190,7 +190,7 @@
               }
             ],
             "estado": "Sao_Paulo",
-            "baseUrl": "https://9302-2804-14d-5c74-9b20-f4b0-44e0-4ee2-5a90.ngrok.io"
+            "baseUrl": "https://meta-selfit-flow.glitch.me"
           }
         }
       }
@@ -210,7 +210,7 @@
             "name": "unidade",
             "label": "Unidade",
             "required": true,
-            "data-source": "https://meta-selfit-flow.glitch.me/unidades?estado=${estado}&cidade=${cidade}"
+            "data-source": "${data.unidades}"
           },
           {
             "type": "Footer",
@@ -268,7 +268,7 @@
         },
         "baseUrl": {
           "type": "string",
-          "__example__": "https://9302-2804-14d-5c74-9b20-f4b0-44e0-4ee2-5a90.ngrok.io"
+          "__example__": "https://meta-selfit-flow.glitch.me"
         },
         "__example__": {
           "type": "object",
@@ -287,7 +287,7 @@
             ],
             "estado": "Sao_Paulo",
             "cidade": "Sao_Paulo",
-            "baseUrl": "https://9302-2804-14d-5c74-9b20-f4b0-44e0-4ee2-5a90.ngrok.io"
+            "baseUrl": "https://meta-selfit-flow.glitch.me"
           }
         }
       }
