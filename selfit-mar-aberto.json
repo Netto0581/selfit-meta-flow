@@ -1,5 +1,9 @@
 {
   "version": "7.0",
+  "security": {
+    "phoneNumber": "+5511999999999",
+    "publicKey": "-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA0vx7agoebGcQSuuPiLJX\nZptN9nndrQmbXEps2aiAFbWhM78LhWx4cbbfAAtVT86zwu1RK7aPFFxuhDR1L6tS\noc/6es03NtnrbtxnMXLxMq6MgUQinhoVILaII6kR8aHuHclIJS7XxV7f3vjz3TqZ\nxPi1zsaCwnNfDp6Lc1WpcsBdyD86M3bgpKtM5Yi65byOxXW8rWU15y8t3U2tQbT\nJ1uQ5Zc1tnstrfEA7wEYZ8GTsFmF1KbTDwXwYwvYlFQzND0dRtnysaLW29ysHua\nh+sdM8g2Thvth/7cR9mCpznCCQl9sqqcR3BaGvzZ8p8F3R9X9P68s4iQbw97AKsT\nsQGqEsYGEo1P0U03Bqs2cHpIqOxYY8vxnMElW+71a9f71cowIca1DQQdFEcHI3w\nUAcGFaA==\n-----END PUBLIC KEY-----"
+  },
   "screens": [
     {
       "id": "banner",
